@@ -1,0 +1,25 @@
+package com.company;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.Year;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+
+public class Main {
+    public static void main(String[] args) {
+        Calendar dateOfBirth = new GregorianCalendar(1956, Calendar.DECEMBER, 4);
+        int beginYear = dateOfBirth.get(Calendar.YEAR);
+        Calendar currentYear = new GregorianCalendar();
+        int currYear = currentYear.get(Calendar.YEAR);
+        DateFormat df = new SimpleDateFormat("EEEE");
+        System.out.println("Дни рождения:");
+        for (int i = beginYear; i < currYear; i++) {
+            int age = i - beginYear;
+            Date date = dateOfBirth.getTime();
+            System.out.println("Возраст " + age + ": " + df.format(date));
+            dateOfBirth.add(Calendar.YEAR, 1);
+        }
+    }
+}
