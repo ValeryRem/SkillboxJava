@@ -1,0 +1,25 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите через пробелы Фамилию Имя Отчество");
+        String input = scanner.nextLine();
+        input = input.trim();
+        String[] initData = input.split("\\s+");
+        ArrayList initDataCorrected = new ArrayList<String>();
+        for (int i = 0; i < initData.length; i++) {
+            if (!initData[i].isEmpty()) {
+                initDataCorrected.add(initData[i]);
+            }
+        }
+        System.out.println(initDataCorrected.size() > 0 ? "Фамилия: " + (initDataCorrected.get(0)) : "Фамилия: Не введена!");
+        System.out.println(initDataCorrected.size() > 1 ? ("Имя: " + initDataCorrected.get(1)) : "Имя: Не введено!");
+        System.out.println(initDataCorrected.size() > 2 ? ("Отчеcтво: " + initDataCorrected.get(2)) : "Отчеcтво: Не введено!");
+    }
+}
+
