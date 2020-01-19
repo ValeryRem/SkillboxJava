@@ -1,0 +1,30 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+    final static int CONTAINERS_IN_LORRY = 12;
+    final static int BOXES_IN_CONTAINER = 27;
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Insert number of boxes please!");
+        int boxesInput = scanner.nextInt();
+        int lorryIndex = 0;
+        int containerIndex = 0;
+        int boxIndex;
+        int boxesInLorry = CONTAINERS_IN_LORRY * BOXES_IN_CONTAINER;
+
+        for (boxIndex = 0; boxIndex < boxesInput; boxIndex++) {
+            if (boxIndex % boxesInLorry == 0) {
+                lorryIndex++;
+                System.out.println("Lorry # " + lorryIndex);
+            }
+            if (boxIndex % BOXES_IN_CONTAINER == 0) {
+                containerIndex++;
+                System.out.println("\tContainer # " + containerIndex);
+            }
+            System.out.printf("\t\tBox # %d.%d.%d\n", lorryIndex, containerIndex, boxIndex + 1);
+        }
+    }
+}
