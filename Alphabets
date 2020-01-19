@@ -1,0 +1,22 @@
+package com.company;
+
+public class Main {
+    static String cyrillicSmall = "абвгдеёжзийклмнопрстуфхцчшщьэъюя";
+    static String cyrillicBold = "АБВГДЕЁЖЗИЁКЛМНОПРСТУФХЦЧШЩЭЬЮЪЯ";
+    static String lathinSmall = "abcdefghijklmnopqrstuvwxyz";
+    static String lathinBold = "ABCDEFGHIJCLMNOPQRSTUVWXYZ";
+    public static void main(String[] args) {
+        for(int i = 0; i < cyrillicSmall.length(); i++) {
+            System.out.println(cyrillicSmall.charAt(i) + ": " + (int) cyrillicSmall.charAt(i));
+        }
+        for(int i = 0; i < cyrillicBold.length(); i++) {
+            System.out.println(cyrillicBold.charAt(i) + ": " + (int) cyrillicBold.charAt(i));
+        }
+        for(int i = 0; i < lathinSmall.length(); i++) {
+            System.out.println(lathinSmall.charAt(i) + ": " + (int) lathinSmall.charAt(i));
+        }
+        for(int i = 0; i < lathinBold.length(); i++) {
+            System.out.println(lathinBold.charAt(i) + ": " + (int) lathinBold.charAt(i));
+        }
+    }
+}
